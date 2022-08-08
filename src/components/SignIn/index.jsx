@@ -30,6 +30,10 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
+  const google = () => {
+    window.open('http://localhost:4000/auth/google', '_self');
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -61,7 +65,7 @@ export default function SignIn() {
             <Grid container spacing={10}>
               <Grid item md={6}>
                 <Button
-                  type='submit'
+                  onClick={google}
                   fullWidth
                   variant='contained'
                   sx={{
@@ -72,7 +76,7 @@ export default function SignIn() {
                   Google
                 </Button>
                 <Button
-                  type='submit'
+                  onClick={null}
                   fullWidth
                   variant='contained'
                   sx={{
@@ -85,7 +89,7 @@ export default function SignIn() {
                   Github
                 </Button>
                 <Button
-                  type='submit'
+                  onClick={null}
                   fullWidth
                   variant='contained'
                   sx={{
